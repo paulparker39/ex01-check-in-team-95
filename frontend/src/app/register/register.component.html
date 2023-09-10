@@ -1,0 +1,33 @@
+<p>Register Here!</p>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="First Name">
+      First Name
+    </label>
+    <input id="firstName" type="text" formControlName="firstName">
+  </div>
+
+  <div>
+    <label for="Last Name">
+      Last Name
+    </label>
+    <input id="lastName" type="text" formControlName="lastName">
+  </div>
+
+  <div>
+    <label for="pid">
+      PID
+    </label>
+    <input id="pid" type="text" formControlName="pid">
+  </div>
+
+
+  <button class="button" type="submit">Submit</button>
+
+</form>
+
+
+<div *ngIf="showLink">
+    <a routerLink="/">Back to Home</a>
+  </div>
