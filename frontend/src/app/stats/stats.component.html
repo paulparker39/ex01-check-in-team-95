@@ -1,8 +1,12 @@
 <p>Statistics!</p>
 
-<div *ngFor="let user of userList">
+<div *ngFor="let user of userList",>
     <a>First name: {{user.firstName}} </a>
     <a>Last name: {{user.lastName}} </a>
     <a>PID: {{user.pid}}</a>
+    <!-- <a>Date: {{user.date?.getDay + " " + user.date?.getUTCMonth + " " + user.date?.getFullYear}}</a> -->
 </div>
+
+<button class="button" type="sortByDate" (click)="sortByDate()">Sort By Date</button>
+<button class="button" type="sortByName" (click)="sortByName()">Sort By Name</button> 
 

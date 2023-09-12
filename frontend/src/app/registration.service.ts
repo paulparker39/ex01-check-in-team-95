@@ -11,11 +11,12 @@ export class RegistrationService {
   private userList: User[] = []
 
 
-  register(firstName: string | null, lastName: string | null , pid: string | null) {
+  register(firstName: string | null, lastName: string | null , pid: string | null, date: Date | null) {
      const curUser: User = {
       firstName,
       lastName,
-      pid
+      pid,
+      date
     };
 
     this.userList.push(curUser)

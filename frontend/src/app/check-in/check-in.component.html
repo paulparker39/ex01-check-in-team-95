@@ -1,0 +1,12 @@
+<form [formGroup]="checkInForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="pid">
+        PID
+      </label>
+      <input id="pid" type="text" formControlName="pid">
+    </div>
+  
+  
+    <button class="button" type="submit">Submit</button>
+  
+  </form>
