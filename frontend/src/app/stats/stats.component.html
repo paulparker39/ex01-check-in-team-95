@@ -1,12 +1,19 @@
 <p>Statistics!</p>
 
-<div *ngFor="let user of userList",>
+<div *ngFor="let user of userList">
     <a>First name: {{user.firstName}} </a>
     <a>Last name: {{user.lastName}} </a>
-    <a>PID: {{user.pid}}</a>
-    <!-- <a>Date: {{user.date?.getDay + " " + user.date?.getUTCMonth + " " + user.date?.getFullYear}}</a> -->
+    <a>PID: {{user.pid + " "}}</a>
+    <div *ngIf="user.date" style="display: inline;">
+        <a>Date and Time: {{user.date | date: 'MM/dd/yyyy h:mm a' }}</a>
 </div>
+      </div>
+    
 
 <button class="button" type="sortByDate" (click)="sortByDate()">Sort By Date</button>
 <button class="button" type="sortByName" (click)="sortByName()">Sort By Name</button> 
+<div>
+    <p></p>
+    <a routerLink="/">Back to Home</a>
+  </div>
 

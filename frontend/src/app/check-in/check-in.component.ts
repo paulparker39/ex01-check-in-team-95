@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { CheckInService } from '../check-in.service';
 import { FormBuilder } from '@angular/forms';
 import { Validator } from '@angular/forms';
+import { RegisterComponent } from '../register/register.component';
+import { StatsComponent } from '../stats/stats.component';
 
 
 @Component({
@@ -11,6 +13,7 @@ import { Validator } from '@angular/forms';
   styleUrls: ['./check-in.component.css']
 })
 export class CheckInComponent {
+  showLink: boolean = false
 
   constructor(
   private formBuilder: FormBuilder,
@@ -36,11 +39,15 @@ export class CheckInComponent {
         if (curUser.pid && curUser.pid === curPid){
           curUser.date = curDate
           window.alert("User " + curUser.firstName + " " + curUser.lastName + " is registered and checked in.")
-          this.checkInForm.reset
-          return
+          this.checkInForm.reset()
+          this.showLink = true
+          
         }
       }
-      window.alert("PID: " + curPid + " could not be found.")
+      if (!this.showLink) {
+        window.alert("PID: " + curPid + " could not be found.")
+      }
+      
     }
 }
 
