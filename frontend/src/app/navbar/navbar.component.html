@@ -1,8 +1,7 @@
-<nav>
-    <ul>
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/register">Sol Student</a></li>
-      <li><a routerLink="/checkin">Arden Ambassador</a></li>
-      <li><a routerLink="/stats">Merritt Manager</a></li>
-    </ul>
-  </nav>
+<mat-toolbar color="primary">
+  <span>CSXL Check In</span>
+  <a mat-button [routerLink]="'/home'" routerLinkActive="active">Home</a>
+  <a mat-button [routerLink]="'/register'" routerLinkActive="active">Sol Student</a>
+  <a mat-button [routerLink]="'/checkin'" routerLinkActive="active">Arden Ambassador</a>
+  <a mat-button [routerLink]="'/stats'" routerLinkActive="active">Merritt Manager</a>
+</mat-toolbar>

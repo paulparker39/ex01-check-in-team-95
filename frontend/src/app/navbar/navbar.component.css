@@ -1,0 +1,17 @@
+mat-toolbar {
+  background-color: #5084ae;  /* Toolbar color */
+  height: 64px;               /* Toolbar height */
+  font-family: 'Roboto', sans-serif; /* Font family */
+  justify-content: space-between; /* For spacing out items */
+}
+
+a.mat-button {
+  color: white;                   /* Text color */
+  font-size: 48px;                /* Increased font size */
+  font-weight: bold;              /* Making text bold */
+}
+
+/* Additional style for active link */
+a.mat-button.router-link-active {
+  background-color: rgba(255, 255, 255, 0.367);
+}
