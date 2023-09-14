@@ -41,13 +41,10 @@ export class CheckInComponent {
           window.alert("User " + curUser.firstName + " " + curUser.lastName + " is registered and checked in.")
           this.checkInForm.reset()
           this.showLink = true
-          
+          return
         }
       }
-      if (!this.showLink) {
-        window.alert("PID: " + curPid + " could not be found.")
-      }
-      
+      window.alert("PID: " + curPid + " could not be found.")
     }
 }
 

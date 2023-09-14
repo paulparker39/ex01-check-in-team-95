@@ -26,8 +26,19 @@ export class StatsComponent {
     this.userList = [...this.regService.UserList].sort((a, b) => a.firstName!.localeCompare(b.firstName!))
   }
 
-  sortByDate(){
-    this.userList = [...this.regService.UserList].sort((a, b) => a.date!.getTime() - b.date!.getTime())
+  sortByDate() {
+    this.userList = this.regService.UserList.sort((a, b) => {
+      if (!a.date) {
+        return 1;
+      }
+      if (!b.date) {
+        return -1
+      }
+      if (!a.date) return 1;
+
+      return a.date!.getTime() - b.date!.getTime();
+    }
+    )
   }
 
 }
