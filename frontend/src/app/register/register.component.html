@@ -1,33 +1,25 @@
-<p>Register Here!</p>
+<mat-card style="padding: 20px;">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput id="firstName" type="text" formControlName="firstName">
+    </mat-form-field>
 
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="First Name">
-      First Name
-    </label>
-    <input id="firstName" type="text" formControlName="firstName">
-  </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput id="lastName" type="text" formControlName="lastName">
+    </mat-form-field>
 
-  <div>
-    <label for="Last Name">
-      Last Name
-    </label>
-    <input id="lastName" type="text" formControlName="lastName">
-  </div>
+    <mat-form-field appearance="fill">
+      <mat-label>PID</mat-label>
+      <input matInput id="pid" type="text" formControlName="pid">
+    </mat-form-field>
 
-  <div>
-    <label for="pid">
-      PID
-    </label>
-    <input id="pid" type="text" formControlName="pid">
-  </div>
-
-
-  <button class="button" type="submit">Submit</button>
-
-</form>
-
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
 
 <div *ngIf="showLink">
-    <a routerLink="/">Back to Home</a>
-  </div>
+  <a mat-button routerLink="/">Back to Home</a>
+</div>
+
+</mat-card>

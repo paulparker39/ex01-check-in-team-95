@@ -21,10 +21,12 @@ export class RegisterComponent {
   });
 
   onSubmit(): void {
-    this.regService.register(this.registerForm.get('firstName')!.value, this.registerForm.get('lastName')!.value, this.registerForm.get('pid')!.value, null)
-    console.warn('Your information has been submitted', this.registerForm.value);
-    window.alert("Thank you, " + this.registerForm.get('firstName')!.value + " " + this.registerForm.get('lastName')!.value)
-    this.registerForm.reset()
+    if(this.registerForm.get('firstName')!.value != null){
+      this.regService.register(this.registerForm.get('firstName')!.value, this.registerForm.get('lastName')!.value, this.registerForm.get('pid')!.value, null)
+      console.warn('Your information has been submitted', this.registerForm.value);
+      window.alert("Thank you, " + this.registerForm.get('firstName')!.value + " " + this.registerForm.get('lastName')!.value)
+      this.registerForm.reset()
+    }
     this.showLink = true
     }
 
